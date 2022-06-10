@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: wsjangpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wsjangpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: wsjangpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: wsjangpipelinesjavascriptdocker 
+          image: user42acr.azurecr.io/wsjangpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
